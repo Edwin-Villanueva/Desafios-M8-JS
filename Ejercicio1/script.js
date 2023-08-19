@@ -38,7 +38,7 @@ function totalizar(arr) {
 function revisarFlujo() {
   let ingresos = [];
   let egresos = [];
-  for (let index = 0; index < 2; index++) {
+  for (let index = 0; index < 12; index++) {
     let ingreso = pedirIngreso(index);
     let egreso = pedirEgreso(index);
     ingresos.push(ingreso);
@@ -46,9 +46,12 @@ function revisarFlujo() {
   }
   let totIngresos = totalizar(ingresos);
   let totEgresos = totalizar(egresos);
-  console.log("ingresos : " + totIngresos);
-  console.log("egresos : " + totEgresos);
-  if (totIngresos < totEgresos) alert("El flujo genera perdidas");
-  else alert("El flujo NO genera perdidas");
+  if (totIngresos < totEgresos) {
+    return -1;
+  } else if (totIngresos > totEgresos) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
-revisarFlujo();
+console.log(revisarFlujo());

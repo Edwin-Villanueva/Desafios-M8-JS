@@ -25,16 +25,17 @@ let plan003 = [
 function calcularInteres(plan) {
   return (plan.capital * plan.plazo * plan.tasa) / 100;
 }
-function añadirPropiedadInteres(planes) {
+function añadirCampoInteres(planes) {
   return planes.map((plan) => {
-    return { ...plan, interes: calcularInteres(plan) };
+    plan.interes = calcularInteres(plan);
+    return plan;
   });
 }
 
 function generarArrayDePlanes() {
   let planesUnificado = [...plan001, ...plan002, ...plan003];
-  let planesFinal = añadirPropiedadInteres(planesUnificado);
-  console.log(planesFinal);
-  return planesFinal;
+  let planesVersionFinal = añadirCampoInteres(planesUnificado);
+  console.log(planesVersionFinal);
+  return planesVersionFinal;
 }
 generarArrayDePlanes();
