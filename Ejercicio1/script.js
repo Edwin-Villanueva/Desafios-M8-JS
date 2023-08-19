@@ -38,7 +38,7 @@ function totalizar(arr) {
 function revisarFlujo() {
   let ingresos = [];
   let egresos = [];
-  for (let index = 0; index < 2; index++) {
+  for (let index = 0; index < 12; index++) {
     let ingreso = pedirIngreso(index);
     let egreso = pedirEgreso(index);
     ingresos.push(ingreso);
